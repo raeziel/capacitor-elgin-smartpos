@@ -45,10 +45,32 @@ repositories {
     google()
     jcenter()
     mavenCentral()
+
+    maven { url "https://jitpack.io" }
+    flatDir(dirs: 'libs')
 }
 
 
 dependencies {
+    //LIBS ADDED TO PROJECT E1 EXPERIENCE
+    implementation(name: 'e1-v1.0.17-release', ext: 'aar')
+    implementation(name: 'cloudpossdk-s-1.0.2', ext: 'aar')
+    implementation(name: 'InterfaceAutomacao-v2.0.0.9', ext: 'aar')
+    implementation group: 'org.apache.commons', name: 'commons-lang3', version:'3.4'
+
+    //BARCODE LIBS
+    implementation('com.journeyapps:zxing-android-embedded:3.4.0')
+    implementation 'com.google.zxing:core:3.4.0'
+
+    //Scanner
+    implementation(name: 'scanner', ext: 'aar')
+
+    //startup
+    implementation("androidx.startup:startup-runtime:1.1.0")
+
+    implementation 'com.google.code.gson:gson:2.8.2'
+
+    //Default imports
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation project(':capacitor-android')
     implementation "androidx.appcompat:appcompat:$androidxAppCompatVersion"
